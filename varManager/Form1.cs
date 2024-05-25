@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.IO;
 //using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 using System.Text;
 //using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -22,6 +24,7 @@ using static SimpleLogger;
 
 namespace varManager
 {
+    [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")] // we added code in Program.cs to prevent this
     public partial class Form1 : Form
     {
         private static readonly byte[] s_creatorNameUtf8 = Encoding.UTF8.GetBytes("creatorName");
